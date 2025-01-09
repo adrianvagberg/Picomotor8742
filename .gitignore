@@ -1,0 +1,17 @@
+# Ignore the virtual environment folder
+venv/
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore logs and temporary files
+*.log
+*.tmp
