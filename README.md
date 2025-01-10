@@ -3,6 +3,8 @@
 Python program to control one (or more, connected in an RS-485 daisy-chain) Newport Picomotor 8742 Controllers.
 
 ## Requirements
+#### Install Newport USB Drivers
+- Verify that the USB drivers are installed correctly by running the ```setup.exe``` file in the flash drive that came with the Picomotor Controller.
 
 #### Install [pyUSB](https://github.com/pyusb/pyusb/blob/master/docs/tutorial.rst)
 ```bash
