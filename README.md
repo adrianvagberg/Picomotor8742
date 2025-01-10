@@ -2,6 +2,8 @@
 
 Python program to control one (or more, connected in an RS-485 daisy-chain) Newport Picomotor 8742 Controllers.
 
+Based on the [python_newport_controller](https://github.com/bdhammel/python_newport_controller) repo by **bdhammel**.
+
 ## Requirements
 #### Install Newport USB Drivers
 - Verify that the USB drivers are installed correctly by running the ```setup.exe``` file in the flash drive that came with the Picomotor Controller.
