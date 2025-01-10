@@ -17,4 +17,4 @@ It is not enough to install libusb as a Python package. Instead you must:
 ## Docs
 In the ```docs``` folder you will find:
 - The Picomotor 8742 Controller User Manual, with extensive documentation on the commands being sent to the controller.
-- [```api.html```](docs/api.html) - API documentation for the methods in ```picomotor.py```
+- [```api.html```](docs/api.html) - API documentation for the methods in ```picomotor.py```. **Note:** This is viewable from your IDE after cloning the repo, but will only show up as html code in Github.
