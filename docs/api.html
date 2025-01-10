@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>picomotor API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>picomotor</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="picomotor.Controller"><code class="flex name class">
+<span>class <span class="ident">Controller</span></span>
+<span>(</span><span>idProduct, idVendor)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Controller(object):
+    &#34;&#34;&#34;Picomotor Controller&#34;&#34;&#34;
+
+    def __init__(self, idProduct, idVendor):
+        &#34;&#34;&#34;
+        Initialize the Picomotor class with the specs of the attached device
+
+        Call self._connect to set up communication with usb device and endpoints
+
+        Args:
+            idProduct (hex): Product ID of Picomotor controller
+            idVendor (hex): Vendor ID of Picomotor controller
+        &#34;&#34;&#34;
+        self.idProduct = idProduct
+        self.idVendor = idVendor
+        self._connect()
+
+    def _connect(self):
+        &#34;&#34;&#34;
+        Connect class to USB device
+
+        Find device from Vendor ID and Product ID
+        Setup taken from [1]
+
+        Raises:
+            ValueError: if the device cannot be found by the Vendor ID and Product ID
+            Assert False: if the input and outgoing endpoints can&#39;t be established
+        &#34;&#34;&#34;
+
+        # find the device
+        self.dev = usb.core.find(
+                        idProduct=self.idProduct,
+                        idVendor=self.idVendor
+                        )
+
+        if self.dev is None:
+            raise ValueError(&#39;Device not found&#39;)
+
+        # set the active configuration. With no arguments, the first
+        # configuration will be the active one
+        self.dev.set_configuration()
+
+        # get an endpoint instance
+        cfg = self.dev.get_active_configuration()
+        intf = cfg[(0,0)]
+
+        self.ep_out = usb.util.find_descriptor(
+            intf,
+            # match the first OUT endpoint
+            custom_match = \
+            lambda e: \
+                usb.util.endpoint_direction(e.bEndpointAddress) == \
+                usb.util.ENDPOINT_OUT)
+
+        self.ep_in = usb.util.find_descriptor(
+            intf,
+            # match the first IN endpoint
+            custom_match = \
+            lambda e: \
+                usb.util.endpoint_direction(e.bEndpointAddress) == \
+                usb.util.ENDPOINT_IN)
+
+        assert (self.ep_out and self.ep_in) is not None
+
+        # Confirm connection to user
+        resp = self.get_firmware_version()
+        print(&#34;Connected to Motor Controller Model {}. Firmware {} {} {}\n&#34;.format(
+                                                    *resp.split(&#39; &#39;)
+                                                    ))
+
+    def send_command(self, usb_command, get_reply=False):
+        &#34;&#34;&#34;
+        Send command to USB device endpoint
+
+        Args:
+            usb_command (str):  Correctly formated command for USB driver
+            get_reply (bool):   query the IN endpoint after sending command, to
+                                get controller&#39;s reply
+
+        Returns:
+            Character representation of returned hex values if a reply is requested
+        &#34;&#34;&#34;
+        self.ep_out.write(usb_command)
+        if get_reply:
+            return self.ep_in.read(100)
+
+
+    def parse_reply(self, reply):
+        &#34;&#34;&#34;
+        Take controller&#39;s reply and make human readable
+
+        Args:
+            reply (list): list of bytes returns from controller in hex format
+
+        Returns:
+            reply (str): Cleaned string of controller reply
+        &#34;&#34;&#34;
+
+        # convert hex to characters
+        reply = &#39;&#39;.join([chr(x) for x in reply])
+
+        # return string without the &#34;1&gt;&#34; or &#34;2&gt;&#34; in front - the user already knows the address given the command sent
+        return reply.rstrip()[2:]
+
+
+    def verify_command(self, cmd):
+        if not cmd in COMMANDS.values():
+            raise ValueError(&#39;Invalid command&#39;)
+
+
+    def verify_address_value(self, addr):
+        if not (addr == 1 or addr == 2):
+            raise ValueError(&#39;Invalid address value&#39;)
+
+
+    def verify_axis_value(self, axis):
+        if not (type(axis) == int and 1 &lt;= axis &lt;= 4):
+            raise ValueError(&#39;Invalid axis value&#39;)
+
+
+    def format_command(self, ascii_cmd, addr = 1, axis = None, val = None):
+        self.verify_command(ascii_cmd)
+        self.verify_address_value(addr)
+
+        if axis:
+            self.verify_axis_value(axis)
+            cmd = f&#39;{addr}&gt;{axis}{ascii_cmd}&#39;
+        else:
+            cmd = f&#39;{addr}&gt;{ascii_cmd}&#39;
+
+        if val is not None:
+            cmd += f&#39;{val}\r&#39;
+        else:
+            cmd += &#39;\r&#39;
+
+        return cmd
+
+
+    def get_id(self, addr):
+        &#34;&#34;&#34;Get instrument ID of the form &#39;New_Focus XXXX vYYY mm/dd/yy, SNZZZZ&#39;&#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;id_string&#39;], addr)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def get_firmware_version(self):
+        &#34;&#34;&#34;Get firmware version of the form &#39;XXXX Version Y.Y mm/dd/yy&#39;&#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_firmware&#39;])
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def set_velocity(self, addr, axis, val):
+        &#34;&#34;&#34;
+        Set velocity for a specified axis. A command will not
+        impact a move that is already in motion.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            val (int):  Velocity (steps/sec). 1 to 2000.
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not(type(val) == int and 1 &lt;= val &lt;= 2000):
+            raise ValueError(&#39;Velocity must be between 1 and 2000&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;set_velocity&#39;], addr, axis, val)
+        self.send_command(cmd)
+
+
+    def get_velocity(self, addr, axis):
+        &#34;&#34;&#34;
+        Get velocity for a specified axis.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        Returns:
+            reply (int): Velocity (steps/sec)
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        cmd = self.format_command(COMMANDS[&#39;query_velocity&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return int(reply)
+
+
+    def set_acceleration(self, addr, axis, val):
+        &#34;&#34;&#34;
+        Set acceleration for a specified axis. A command will not
+        impact a move that is already in motion.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            val (int):  Acceleration (steps/sec^2). 1 to 200000.
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not (type(val) == int and 0 &lt; val &lt;= 200000):
+            raise ValueError(&#39;Invalid acceleration value&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;set_accel&#39;], addr, axis, val)
+        self.send_command(cmd)
+
+
+    def get_acceleration(self, addr, axis):
+        &#34;&#34;&#34;
+        Get acceleration for a specified axis.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        Returns:
+            reply (int): Acceleration (steps/sec^2)
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_accel&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return int(reply)
+
+
+    def get_position(self, addr, axis):
+        &#34;&#34;&#34;
+        Get the number of steps made by the controller relative to its
+        position when it was powered ON, a system reset occurred, or
+        set_home() was called
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        Returns:
+            reply (int): Number of steps
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        cmd = self.format_command(COMMANDS[&#39;query_pos&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return int(reply)
+
+
+    def set_home(self, addr, axis, val = None):
+        &#34;&#34;&#34;
+        Define the &#39;home&#39; position for an axis.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            val (int):  Number of steps that the current position is away from &#39;home&#39;
+                        If &#39;val&#39; is not passed, then home is set to 0.
+        &#34;&#34;&#34;
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not type(val) == int:
+            raise ValueError(&#39;Invalid acceleration value&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;define_home&#39;], addr, axis, val)
+        self.send_command(cmd)
+
+
+    def get_home(self, addr, axis):
+        cmd = self.format_command(COMMANDS[&#39;query_home&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def finished_moving(self, addr, axis):
+        &#34;&#34;&#34;
+        Query the motion status of an axis.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        Returns:
+            reply (bool): True if done moving, False otherwise
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_motion_done&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply[-1] == &#39;1&#39;
+
+
+    def move_indefinitely(self, addr, axis, direction):
+        &#34;&#34;&#34;
+        Move the specified axis in the given direction, indefinitely.
+        Issue a stop_motion() command to stop the motor.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            direction (str): &#39;+&#39; or &#39;-&#39;
+        &#34;&#34;&#34;
+
+        if not (direction == &#39;+&#39; or direction == &#39;-&#39;):
+            raise ValueError(&#39;Direction must be + or -&#39;)
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        cmd = self.format_command(COMMANDS[&#39;move_indefinitely&#39;], addr, axis, direction)
+        self.send_command(cmd)
+
+
+    def move_to_target(self, addr, axis, target):
+        &#34;&#34;&#34;
+        Move an axis to a desired target (absolute) position w.r.t. the defined &#39;home&#39;.
+        Method finishes (i.e. allows a new method call) once motion is done.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            target (int): Target position in steps from &#39;home&#39; position. Can be negative or positive.
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not type(target) == int:
+            raise ValueError(&#39;Invalid target position&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;move_to_target_pos&#39;], addr, axis, target)
+        self.send_command(cmd)
+
+        while not self.finished_moving(addr, axis):
+            pass
+
+
+    def get_target(self, addr, axis):
+        cmd = self.format_command(COMMANDS[&#39;query_target_pos&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return int(reply)
+
+
+    def move_relative(self, addr, axis, steps):
+        &#34;&#34;&#34;
+        Move an axis by a specified number of steps from current position.
+        Method finishes (i.e. allows a new method call) once motion is done.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            steps (int): Number of steps to move. Can be negative or positive.
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not type(steps) == int:
+            raise ValueError(&#39;Invalid target position&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;move_relative&#39;], addr, axis, steps)
+        self.send_command(cmd)
+
+        while not self.finished_moving(addr, axis):
+            pass
+
+
+    def get_relative_target(self, addr, axis):
+        cmd = self.format_command(COMMANDS[&#39;query_target_rel&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def detect_motors(self, addr):
+        &#34;&#34;&#34;
+        Automatically detect what motor is connected to which axis.
+
+        Args:
+            addr (int): 1 or 2
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+
+        cmd = self.format_command(COMMANDS[&#39;motor_check&#39;], addr)
+        self.send_command(cmd)
+
+
+    def set_motor_type(self, addr, axis, val):
+        &#34;&#34;&#34;
+        Manually set the motor type for a specified axis.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            val (int):  0 for &#34;No motor connected&#34;
+                        1 for &#34;Motor type unknown&#34;
+                        2 for &#34;&#39;Tiny&#39; motor&#34;
+                        3 for &#34;&#39;Standard&#39; motor&#34;
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        if not (type(val) == int and 0 &lt;= val &lt;= 3):
+            raise ValueError(&#39;Invalid motor type&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;set_motor_type&#39;], addr, axis, val)
+        self.send_command(cmd)
+
+
+    def get_motor_type(self, addr, axis):
+        &#34;&#34;&#34;
+        Get the motor type for a specified axis. This method reports the present motor type
+        setting in memory - it does NOT perform a check to determine whether the setting is
+        still valid.
+
+        If motors have been removed or reconnected to a different axis, it is recommended to
+        first run the detect_motors() method.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        Returns:
+            reply (str): A description of the motor type (if any)
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_motor_type&#39;], addr, axis)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return MOTOR_TYPE[f&#39;{reply[-1]}&#39;]
+
+
+    def set_address(self, addr, val = 1):
+        &#34;&#34;&#34;
+        Manually set the address of a controller.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+            val (int):  New address. Default = 1. Valid values between 1 and 31.
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        if not (type(val) == int and 1 &lt;= val &lt;= 31):
+            raise ValueError(&#39;New address must be between 1 and 31&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;set_address&#39;], addr, val)
+        self.send_command(cmd)
+
+
+    def get_address(self, addr):
+        &#34;&#34;&#34;
+        Get the address of a controller.
+
+        Args:
+            addr (int): 1 or 2
+        Returns:
+            reply (int): Controller address
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+
+        cmd = self.format_command(COMMANDS[&#39;query_address&#39;], addr)
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return int(reply)
+
+
+    def scan(self, conflict_resolution = 0):
+        &#34;&#34;&#34;
+        Initiate a scan of controllers on RS-485 network.
+        Method finishes (i.e. allows a new method call) once scan is done.
+
+        Args:
+            conflict_resolution (int):  0 - Does not resolve address conflicts
+                                        1 - Address conflicts are resolved by reassigning
+                                            conflicting addresses to the lowest available value
+                                        2 - Address conflicts are resolved by reassigning ALL
+                                            addresses in ascending order, starting with the
+                                            master controller at address 1
+        &#34;&#34;&#34;
+
+        if not (type(conflict_resolution) == int and 0 &lt;= conflict_resolution &lt;= 2):
+            raise ValueError(&#39;Conflict resolution scheme must be 0, 1, or 2.&#39;)
+
+        cmd = self.format_command(COMMANDS[&#39;scan_RS485&#39;], val = conflict_resolution)
+        self.send_command(cmd)
+
+        while not self.is_scan_done():
+            pass
+
+
+    def is_scan_done(self):
+        cmd = self.format_command(COMMANDS[&#39;query_scan_status&#39;])
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply[-1] == &#39;1&#39;
+
+
+    def get_controller_address_map(self):
+        &#34;&#34;&#34;
+        Get a list of all addresses occupied in the RS-485 network.
+
+        Returns:
+            reply (list):   Binary list where each index corresponds to an address.
+                            Index 0 is reserved for showing if there are conflicts.
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_RS485_addr&#39;])
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        address_map = [int(s) for s in format(int(reply), &#39;b&#39;)]
+        return address_map[::-1]
+
+
+    def save_settings(self):
+        &#34;&#34;&#34;
+        Save the controller settings to its non-volatile memory. These settings are reloaded to working
+        registers automatically after system reboot. Parameters for all motors are saved.
+
+        The following settings are saved:
+            1. Motor type
+            2. Desired velocity
+            3. Desired acceleration
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;save&#39;])
+        self.send_command(cmd)
+
+
+    def stop_motion(self, addr, axis):
+        &#34;&#34;&#34;
+        Stop the motion of an axis. Motion slows down according to the desired acceleration.
+
+        Args:
+            addr (int): 1 or 2
+            axis (int): 1 to 4
+        &#34;&#34;&#34;
+
+        self.verify_address_value(addr)
+        self.verify_axis_value(axis)
+
+        cmd = self.format_command(COMMANDS[&#39;stop&#39;], addr, axis)
+        self.send_command(cmd)
+
+
+    def get_latest_error_msg(self):
+        &#34;&#34;&#34;
+        Pop the latest error (with code and message) from the error stack.
+        (see docs\&#34;8742 Controller User Manual.pdf&#34; Appendix for complete listing of error codes).
+
+        Returns:
+            reply (str): Error message of the form &#34;[Error code], [Error message]&#34;
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_error_msg&#39;])
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def get_latest_error_code(self):
+        &#34;&#34;&#34;
+        Pop the latest error code (without its message) from the error stack.
+        (see docs\&#34;8742 Controller User Manual.pdf&#34; Appendix for complete listing of error codes).
+
+        Returns:
+            reply (str): Error code
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;query_error_nr&#39;])
+        reply = self.parse_reply(
+            self.send_command(cmd, True)
+        )
+        return reply
+
+
+    def purge_all_settings(self):
+        &#34;&#34;&#34;
+        Purge all settings in the controller non-volatile memory.
+        These settings include:
+            1. Motor type
+            2. Desired velocity
+            3. Desired acceleration
+        &#34;&#34;&#34;
+
+        cmd = self.format_command(COMMANDS[&#39;purge_memory&#39;])
+        self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Picomotor Controller</p>
+<p>Initialize the Picomotor class with the specs of the attached device</p>
+<p>Call self._connect to set up communication with usb device and endpoints</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>idProduct</code></strong> :&ensp;<code>hex</code></dt>
+<dd>Product ID of Picomotor controller</dd>
+<dt><strong><code>idVendor</code></strong> :&ensp;<code>hex</code></dt>
+<dd>Vendor ID of Picomotor controller</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="picomotor.Controller.detect_motors"><code class="name flex">
+<span>def <span class="ident">detect_motors</span></span>(<span>self, addr)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detect_motors(self, addr):
+    &#34;&#34;&#34;
+    Automatically detect what motor is connected to which axis.
+
+    Args:
+        addr (int): 1 or 2
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+
+    cmd = self.format_command(COMMANDS[&#39;motor_check&#39;], addr)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Automatically detect what motor is connected to which axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.finished_moving"><code class="name flex">
+<span>def <span class="ident">finished_moving</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def finished_moving(self, addr, axis):
+    &#34;&#34;&#34;
+    Query the motion status of an axis.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    Returns:
+        reply (bool): True if done moving, False otherwise
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_motion_done&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply[-1] == &#39;1&#39;</code></pre>
+</details>
+<div class="desc"><p>Query the motion status of an axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (bool): True if done moving, False otherwise</p></div>
+</dd>
+<dt id="picomotor.Controller.format_command"><code class="name flex">
+<span>def <span class="ident">format_command</span></span>(<span>self, ascii_cmd, addr=1, axis=None, val=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def format_command(self, ascii_cmd, addr = 1, axis = None, val = None):
+    self.verify_command(ascii_cmd)
+    self.verify_address_value(addr)
+
+    if axis:
+        self.verify_axis_value(axis)
+        cmd = f&#39;{addr}&gt;{axis}{ascii_cmd}&#39;
+    else:
+        cmd = f&#39;{addr}&gt;{ascii_cmd}&#39;
+
+    if val is not None:
+        cmd += f&#39;{val}\r&#39;
+    else:
+        cmd += &#39;\r&#39;
+
+    return cmd</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.get_acceleration"><code class="name flex">
+<span>def <span class="ident">get_acceleration</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_acceleration(self, addr, axis):
+    &#34;&#34;&#34;
+    Get acceleration for a specified axis.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    Returns:
+        reply (int): Acceleration (steps/sec^2)
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_accel&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return int(reply)</code></pre>
+</details>
+<div class="desc"><p>Get acceleration for a specified axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (int): Acceleration (steps/sec^2)</p></div>
+</dd>
+<dt id="picomotor.Controller.get_address"><code class="name flex">
+<span>def <span class="ident">get_address</span></span>(<span>self, addr)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_address(self, addr):
+    &#34;&#34;&#34;
+    Get the address of a controller.
+
+    Args:
+        addr (int): 1 or 2
+    Returns:
+        reply (int): Controller address
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+
+    cmd = self.format_command(COMMANDS[&#39;query_address&#39;], addr)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return int(reply)</code></pre>
+</details>
+<div class="desc"><p>Get the address of a controller.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (int): Controller address</p></div>
+</dd>
+<dt id="picomotor.Controller.get_controller_address_map"><code class="name flex">
+<span>def <span class="ident">get_controller_address_map</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_controller_address_map(self):
+    &#34;&#34;&#34;
+    Get a list of all addresses occupied in the RS-485 network.
+
+    Returns:
+        reply (list):   Binary list where each index corresponds to an address.
+                        Index 0 is reserved for showing if there are conflicts.
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_RS485_addr&#39;])
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    address_map = [int(s) for s in format(int(reply), &#39;b&#39;)]
+    return address_map[::-1]</code></pre>
+</details>
+<div class="desc"><p>Get a list of all addresses occupied in the RS-485 network.</p>
+<h2 id="returns">Returns</h2>
+<p>reply (list):
+Binary list where each index corresponds to an address.
+Index 0 is reserved for showing if there are conflicts.</p></div>
+</dd>
+<dt id="picomotor.Controller.get_firmware_version"><code class="name flex">
+<span>def <span class="ident">get_firmware_version</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_firmware_version(self):
+    &#34;&#34;&#34;Get firmware version of the form &#39;XXXX Version Y.Y mm/dd/yy&#39;&#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_firmware&#39;])
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"><p>Get firmware version of the form 'XXXX Version Y.Y mm/dd/yy'</p></div>
+</dd>
+<dt id="picomotor.Controller.get_home"><code class="name flex">
+<span>def <span class="ident">get_home</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_home(self, addr, axis):
+    cmd = self.format_command(COMMANDS[&#39;query_home&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.get_id"><code class="name flex">
+<span>def <span class="ident">get_id</span></span>(<span>self, addr)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_id(self, addr):
+    &#34;&#34;&#34;Get instrument ID of the form &#39;New_Focus XXXX vYYY mm/dd/yy, SNZZZZ&#39;&#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;id_string&#39;], addr)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"><p>Get instrument ID of the form 'New_Focus XXXX vYYY mm/dd/yy, SNZZZZ'</p></div>
+</dd>
+<dt id="picomotor.Controller.get_latest_error_code"><code class="name flex">
+<span>def <span class="ident">get_latest_error_code</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_latest_error_code(self):
+    &#34;&#34;&#34;
+    Pop the latest error code (without its message) from the error stack.
+    (see docs\&#34;8742 Controller User Manual.pdf&#34; Appendix for complete listing of error codes).
+
+    Returns:
+        reply (str): Error code
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_error_nr&#39;])
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"><p>Pop the latest error code (without its message) from the error stack.
+(see docs"8742 Controller User Manual.pdf" Appendix for complete listing of error codes).</p>
+<h2 id="returns">Returns</h2>
+<p>reply (str): Error code</p></div>
+</dd>
+<dt id="picomotor.Controller.get_latest_error_msg"><code class="name flex">
+<span>def <span class="ident">get_latest_error_msg</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_latest_error_msg(self):
+    &#34;&#34;&#34;
+    Pop the latest error (with code and message) from the error stack.
+    (see docs\&#34;8742 Controller User Manual.pdf&#34; Appendix for complete listing of error codes).
+
+    Returns:
+        reply (str): Error message of the form &#34;[Error code], [Error message]&#34;
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_error_msg&#39;])
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"><p>Pop the latest error (with code and message) from the error stack.
+(see docs"8742 Controller User Manual.pdf" Appendix for complete listing of error codes).</p>
+<h2 id="returns">Returns</h2>
+<p>reply (str): Error message of the form "[Error code], [Error message]"</p></div>
+</dd>
+<dt id="picomotor.Controller.get_motor_type"><code class="name flex">
+<span>def <span class="ident">get_motor_type</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_motor_type(self, addr, axis):
+    &#34;&#34;&#34;
+    Get the motor type for a specified axis. This method reports the present motor type
+    setting in memory - it does NOT perform a check to determine whether the setting is
+    still valid.
+
+    If motors have been removed or reconnected to a different axis, it is recommended to
+    first run the detect_motors() method.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    Returns:
+        reply (str): A description of the motor type (if any)
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;query_motor_type&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return MOTOR_TYPE[f&#39;{reply[-1]}&#39;]</code></pre>
+</details>
+<div class="desc"><p>Get the motor type for a specified axis. This method reports the present motor type
+setting in memory - it does NOT perform a check to determine whether the setting is
+still valid.</p>
+<p>If motors have been removed or reconnected to a different axis, it is recommended to
+first run the detect_motors() method.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (str): A description of the motor type (if any)</p></div>
+</dd>
+<dt id="picomotor.Controller.get_position"><code class="name flex">
+<span>def <span class="ident">get_position</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_position(self, addr, axis):
+    &#34;&#34;&#34;
+    Get the number of steps made by the controller relative to its
+    position when it was powered ON, a system reset occurred, or
+    set_home() was called
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    Returns:
+        reply (int): Number of steps
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    cmd = self.format_command(COMMANDS[&#39;query_pos&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return int(reply)</code></pre>
+</details>
+<div class="desc"><p>Get the number of steps made by the controller relative to its
+position when it was powered ON, a system reset occurred, or
+set_home() was called</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (int): Number of steps</p></div>
+</dd>
+<dt id="picomotor.Controller.get_relative_target"><code class="name flex">
+<span>def <span class="ident">get_relative_target</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_relative_target(self, addr, axis):
+    cmd = self.format_command(COMMANDS[&#39;query_target_rel&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.get_target"><code class="name flex">
+<span>def <span class="ident">get_target</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_target(self, addr, axis):
+    cmd = self.format_command(COMMANDS[&#39;query_target_pos&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return int(reply)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.get_velocity"><code class="name flex">
+<span>def <span class="ident">get_velocity</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_velocity(self, addr, axis):
+    &#34;&#34;&#34;
+    Get velocity for a specified axis.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    Returns:
+        reply (int): Velocity (steps/sec)
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    cmd = self.format_command(COMMANDS[&#39;query_velocity&#39;], addr, axis)
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return int(reply)</code></pre>
+</details>
+<div class="desc"><p>Get velocity for a specified axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (int): Velocity (steps/sec)</p></div>
+</dd>
+<dt id="picomotor.Controller.is_scan_done"><code class="name flex">
+<span>def <span class="ident">is_scan_done</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_scan_done(self):
+    cmd = self.format_command(COMMANDS[&#39;query_scan_status&#39;])
+    reply = self.parse_reply(
+        self.send_command(cmd, True)
+    )
+    return reply[-1] == &#39;1&#39;</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.move_indefinitely"><code class="name flex">
+<span>def <span class="ident">move_indefinitely</span></span>(<span>self, addr, axis, direction)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move_indefinitely(self, addr, axis, direction):
+    &#34;&#34;&#34;
+    Move the specified axis in the given direction, indefinitely.
+    Issue a stop_motion() command to stop the motor.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        direction (str): &#39;+&#39; or &#39;-&#39;
+    &#34;&#34;&#34;
+
+    if not (direction == &#39;+&#39; or direction == &#39;-&#39;):
+        raise ValueError(&#39;Direction must be + or -&#39;)
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    cmd = self.format_command(COMMANDS[&#39;move_indefinitely&#39;], addr, axis, direction)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Move the specified axis in the given direction, indefinitely.
+Issue a stop_motion() command to stop the motor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>direction</code></strong> :&ensp;<code>str</code></dt>
+<dd>'+' or '-'</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.move_relative"><code class="name flex">
+<span>def <span class="ident">move_relative</span></span>(<span>self, addr, axis, steps)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move_relative(self, addr, axis, steps):
+    &#34;&#34;&#34;
+    Move an axis by a specified number of steps from current position.
+    Method finishes (i.e. allows a new method call) once motion is done.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        steps (int): Number of steps to move. Can be negative or positive.
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not type(steps) == int:
+        raise ValueError(&#39;Invalid target position&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;move_relative&#39;], addr, axis, steps)
+    self.send_command(cmd)
+
+    while not self.finished_moving(addr, axis):
+        pass</code></pre>
+</details>
+<div class="desc"><p>Move an axis by a specified number of steps from current position.
+Method finishes (i.e. allows a new method call) once motion is done.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>steps</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of steps to move. Can be negative or positive.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.move_to_target"><code class="name flex">
+<span>def <span class="ident">move_to_target</span></span>(<span>self, addr, axis, target)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move_to_target(self, addr, axis, target):
+    &#34;&#34;&#34;
+    Move an axis to a desired target (absolute) position w.r.t. the defined &#39;home&#39;.
+    Method finishes (i.e. allows a new method call) once motion is done.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        target (int): Target position in steps from &#39;home&#39; position. Can be negative or positive.
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not type(target) == int:
+        raise ValueError(&#39;Invalid target position&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;move_to_target_pos&#39;], addr, axis, target)
+    self.send_command(cmd)
+
+    while not self.finished_moving(addr, axis):
+        pass</code></pre>
+</details>
+<div class="desc"><p>Move an axis to a desired target (absolute) position w.r.t. the defined 'home'.
+Method finishes (i.e. allows a new method call) once motion is done.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>target</code></strong> :&ensp;<code>int</code></dt>
+<dd>Target position in steps from 'home' position. Can be negative or positive.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.parse_reply"><code class="name flex">
+<span>def <span class="ident">parse_reply</span></span>(<span>self, reply)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_reply(self, reply):
+    &#34;&#34;&#34;
+    Take controller&#39;s reply and make human readable
+
+    Args:
+        reply (list): list of bytes returns from controller in hex format
+
+    Returns:
+        reply (str): Cleaned string of controller reply
+    &#34;&#34;&#34;
+
+    # convert hex to characters
+    reply = &#39;&#39;.join([chr(x) for x in reply])
+
+    # return string without the &#34;1&gt;&#34; or &#34;2&gt;&#34; in front - the user already knows the address given the command sent
+    return reply.rstrip()[2:]</code></pre>
+</details>
+<div class="desc"><p>Take controller's reply and make human readable</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>reply</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of bytes returns from controller in hex format</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>reply (str): Cleaned string of controller reply</p></div>
+</dd>
+<dt id="picomotor.Controller.purge_all_settings"><code class="name flex">
+<span>def <span class="ident">purge_all_settings</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def purge_all_settings(self):
+    &#34;&#34;&#34;
+    Purge all settings in the controller non-volatile memory.
+    These settings include:
+        1. Motor type
+        2. Desired velocity
+        3. Desired acceleration
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;purge_memory&#39;])
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Purge all settings in the controller non-volatile memory.
+These settings include:
+1. Motor type
+2. Desired velocity
+3. Desired acceleration</p></div>
+</dd>
+<dt id="picomotor.Controller.save_settings"><code class="name flex">
+<span>def <span class="ident">save_settings</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_settings(self):
+    &#34;&#34;&#34;
+    Save the controller settings to its non-volatile memory. These settings are reloaded to working
+    registers automatically after system reboot. Parameters for all motors are saved.
+
+    The following settings are saved:
+        1. Motor type
+        2. Desired velocity
+        3. Desired acceleration
+    &#34;&#34;&#34;
+
+    cmd = self.format_command(COMMANDS[&#39;save&#39;])
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Save the controller settings to its non-volatile memory. These settings are reloaded to working
+registers automatically after system reboot. Parameters for all motors are saved.</p>
+<p>The following settings are saved:
+1. Motor type
+2. Desired velocity
+3. Desired acceleration</p></div>
+</dd>
+<dt id="picomotor.Controller.scan"><code class="name flex">
+<span>def <span class="ident">scan</span></span>(<span>self, conflict_resolution=0)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scan(self, conflict_resolution = 0):
+    &#34;&#34;&#34;
+    Initiate a scan of controllers on RS-485 network.
+    Method finishes (i.e. allows a new method call) once scan is done.
+
+    Args:
+        conflict_resolution (int):  0 - Does not resolve address conflicts
+                                    1 - Address conflicts are resolved by reassigning
+                                        conflicting addresses to the lowest available value
+                                    2 - Address conflicts are resolved by reassigning ALL
+                                        addresses in ascending order, starting with the
+                                        master controller at address 1
+    &#34;&#34;&#34;
+
+    if not (type(conflict_resolution) == int and 0 &lt;= conflict_resolution &lt;= 2):
+        raise ValueError(&#39;Conflict resolution scheme must be 0, 1, or 2.&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;scan_RS485&#39;], val = conflict_resolution)
+    self.send_command(cmd)
+
+    while not self.is_scan_done():
+        pass</code></pre>
+</details>
+<div class="desc"><p>Initiate a scan of controllers on RS-485 network.
+Method finishes (i.e. allows a new method call) once scan is done.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>conflict_resolution</code></strong> :&ensp;<code>int</code></dt>
+<dd>0 - Does not resolve address conflicts
+1 - Address conflicts are resolved by reassigning
+conflicting addresses to the lowest available value
+2 - Address conflicts are resolved by reassigning ALL
+addresses in ascending order, starting with the
+master controller at address 1</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.send_command"><code class="name flex">
+<span>def <span class="ident">send_command</span></span>(<span>self, usb_command, get_reply=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_command(self, usb_command, get_reply=False):
+    &#34;&#34;&#34;
+    Send command to USB device endpoint
+
+    Args:
+        usb_command (str):  Correctly formated command for USB driver
+        get_reply (bool):   query the IN endpoint after sending command, to
+                            get controller&#39;s reply
+
+    Returns:
+        Character representation of returned hex values if a reply is requested
+    &#34;&#34;&#34;
+    self.ep_out.write(usb_command)
+    if get_reply:
+        return self.ep_in.read(100)</code></pre>
+</details>
+<div class="desc"><p>Send command to USB device endpoint</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>usb_command</code></strong> :&ensp;<code>str</code></dt>
+<dd>Correctly formated command for USB driver</dd>
+<dt><strong><code>get_reply</code></strong> :&ensp;<code>bool</code></dt>
+<dd>query the IN endpoint after sending command, to
+get controller's reply</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Character representation of returned hex values if a reply is requested</p></div>
+</dd>
+<dt id="picomotor.Controller.set_acceleration"><code class="name flex">
+<span>def <span class="ident">set_acceleration</span></span>(<span>self, addr, axis, val)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_acceleration(self, addr, axis, val):
+    &#34;&#34;&#34;
+    Set acceleration for a specified axis. A command will not
+    impact a move that is already in motion.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        val (int):  Acceleration (steps/sec^2). 1 to 200000.
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not (type(val) == int and 0 &lt; val &lt;= 200000):
+        raise ValueError(&#39;Invalid acceleration value&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;set_accel&#39;], addr, axis, val)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Set acceleration for a specified axis. A command will not
+impact a move that is already in motion.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>val</code></strong> :&ensp;<code>int</code></dt>
+<dd>Acceleration (steps/sec^2). 1 to 200000.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.set_address"><code class="name flex">
+<span>def <span class="ident">set_address</span></span>(<span>self, addr, val=1)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_address(self, addr, val = 1):
+    &#34;&#34;&#34;
+    Manually set the address of a controller.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        val (int):  New address. Default = 1. Valid values between 1 and 31.
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    if not (type(val) == int and 1 &lt;= val &lt;= 31):
+        raise ValueError(&#39;New address must be between 1 and 31&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;set_address&#39;], addr, val)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Manually set the address of a controller.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>val</code></strong> :&ensp;<code>int</code></dt>
+<dd>New address. Default = 1. Valid values between 1 and 31.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.set_home"><code class="name flex">
+<span>def <span class="ident">set_home</span></span>(<span>self, addr, axis, val=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_home(self, addr, axis, val = None):
+    &#34;&#34;&#34;
+    Define the &#39;home&#39; position for an axis.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        val (int):  Number of steps that the current position is away from &#39;home&#39;
+                    If &#39;val&#39; is not passed, then home is set to 0.
+    &#34;&#34;&#34;
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not type(val) == int:
+        raise ValueError(&#39;Invalid acceleration value&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;define_home&#39;], addr, axis, val)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Define the 'home' position for an axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>val</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of steps that the current position is away from 'home'
+If 'val' is not passed, then home is set to 0.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.set_motor_type"><code class="name flex">
+<span>def <span class="ident">set_motor_type</span></span>(<span>self, addr, axis, val)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_motor_type(self, addr, axis, val):
+    &#34;&#34;&#34;
+    Manually set the motor type for a specified axis.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        val (int):  0 for &#34;No motor connected&#34;
+                    1 for &#34;Motor type unknown&#34;
+                    2 for &#34;&#39;Tiny&#39; motor&#34;
+                    3 for &#34;&#39;Standard&#39; motor&#34;
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not (type(val) == int and 0 &lt;= val &lt;= 3):
+        raise ValueError(&#39;Invalid motor type&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;set_motor_type&#39;], addr, axis, val)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Manually set the motor type for a specified axis.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>val</code></strong> :&ensp;<code>int</code></dt>
+<dd>0 for "No motor connected"
+1 for "Motor type unknown"
+2 for "'Tiny' motor"
+3 for "'Standard' motor"</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.set_velocity"><code class="name flex">
+<span>def <span class="ident">set_velocity</span></span>(<span>self, addr, axis, val)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_velocity(self, addr, axis, val):
+    &#34;&#34;&#34;
+    Set velocity for a specified axis. A command will not
+    impact a move that is already in motion.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+        val (int):  Velocity (steps/sec). 1 to 2000.
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    if not(type(val) == int and 1 &lt;= val &lt;= 2000):
+        raise ValueError(&#39;Velocity must be between 1 and 2000&#39;)
+
+    cmd = self.format_command(COMMANDS[&#39;set_velocity&#39;], addr, axis, val)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Set velocity for a specified axis. A command will not
+impact a move that is already in motion.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+<dt><strong><code>val</code></strong> :&ensp;<code>int</code></dt>
+<dd>Velocity (steps/sec). 1 to 2000.</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.stop_motion"><code class="name flex">
+<span>def <span class="ident">stop_motion</span></span>(<span>self, addr, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop_motion(self, addr, axis):
+    &#34;&#34;&#34;
+    Stop the motion of an axis. Motion slows down according to the desired acceleration.
+
+    Args:
+        addr (int): 1 or 2
+        axis (int): 1 to 4
+    &#34;&#34;&#34;
+
+    self.verify_address_value(addr)
+    self.verify_axis_value(axis)
+
+    cmd = self.format_command(COMMANDS[&#39;stop&#39;], addr, axis)
+    self.send_command(cmd)</code></pre>
+</details>
+<div class="desc"><p>Stop the motion of an axis. Motion slows down according to the desired acceleration.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 or 2</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code></dt>
+<dd>1 to 4</dd>
+</dl></div>
+</dd>
+<dt id="picomotor.Controller.verify_address_value"><code class="name flex">
+<span>def <span class="ident">verify_address_value</span></span>(<span>self, addr)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def verify_address_value(self, addr):
+    if not (addr == 1 or addr == 2):
+        raise ValueError(&#39;Invalid address value&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.verify_axis_value"><code class="name flex">
+<span>def <span class="ident">verify_axis_value</span></span>(<span>self, axis)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def verify_axis_value(self, axis):
+    if not (type(axis) == int and 1 &lt;= axis &lt;= 4):
+        raise ValueError(&#39;Invalid axis value&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="picomotor.Controller.verify_command"><code class="name flex">
+<span>def <span class="ident">verify_command</span></span>(<span>self, cmd)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def verify_command(self, cmd):
+    if not cmd in COMMANDS.values():
+        raise ValueError(&#39;Invalid command&#39;)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="picomotor.Controller" href="#picomotor.Controller">Controller</a></code></h4>
+<ul class="">
+<li><code><a title="picomotor.Controller.detect_motors" href="#picomotor.Controller.detect_motors">detect_motors</a></code></li>
+<li><code><a title="picomotor.Controller.finished_moving" href="#picomotor.Controller.finished_moving">finished_moving</a></code></li>
+<li><code><a title="picomotor.Controller.format_command" href="#picomotor.Controller.format_command">format_command</a></code></li>
+<li><code><a title="picomotor.Controller.get_acceleration" href="#picomotor.Controller.get_acceleration">get_acceleration</a></code></li>
+<li><code><a title="picomotor.Controller.get_address" href="#picomotor.Controller.get_address">get_address</a></code></li>
+<li><code><a title="picomotor.Controller.get_controller_address_map" href="#picomotor.Controller.get_controller_address_map">get_controller_address_map</a></code></li>
+<li><code><a title="picomotor.Controller.get_firmware_version" href="#picomotor.Controller.get_firmware_version">get_firmware_version</a></code></li>
+<li><code><a title="picomotor.Controller.get_home" href="#picomotor.Controller.get_home">get_home</a></code></li>
+<li><code><a title="picomotor.Controller.get_id" href="#picomotor.Controller.get_id">get_id</a></code></li>
+<li><code><a title="picomotor.Controller.get_latest_error_code" href="#picomotor.Controller.get_latest_error_code">get_latest_error_code</a></code></li>
+<li><code><a title="picomotor.Controller.get_latest_error_msg" href="#picomotor.Controller.get_latest_error_msg">get_latest_error_msg</a></code></li>
+<li><code><a title="picomotor.Controller.get_motor_type" href="#picomotor.Controller.get_motor_type">get_motor_type</a></code></li>
+<li><code><a title="picomotor.Controller.get_position" href="#picomotor.Controller.get_position">get_position</a></code></li>
+<li><code><a title="picomotor.Controller.get_relative_target" href="#picomotor.Controller.get_relative_target">get_relative_target</a></code></li>
+<li><code><a title="picomotor.Controller.get_target" href="#picomotor.Controller.get_target">get_target</a></code></li>
+<li><code><a title="picomotor.Controller.get_velocity" href="#picomotor.Controller.get_velocity">get_velocity</a></code></li>
+<li><code><a title="picomotor.Controller.is_scan_done" href="#picomotor.Controller.is_scan_done">is_scan_done</a></code></li>
+<li><code><a title="picomotor.Controller.move_indefinitely" href="#picomotor.Controller.move_indefinitely">move_indefinitely</a></code></li>
+<li><code><a title="picomotor.Controller.move_relative" href="#picomotor.Controller.move_relative">move_relative</a></code></li>
+<li><code><a title="picomotor.Controller.move_to_target" href="#picomotor.Controller.move_to_target">move_to_target</a></code></li>
+<li><code><a title="picomotor.Controller.parse_reply" href="#picomotor.Controller.parse_reply">parse_reply</a></code></li>
+<li><code><a title="picomotor.Controller.purge_all_settings" href="#picomotor.Controller.purge_all_settings">purge_all_settings</a></code></li>
+<li><code><a title="picomotor.Controller.save_settings" href="#picomotor.Controller.save_settings">save_settings</a></code></li>
+<li><code><a title="picomotor.Controller.scan" href="#picomotor.Controller.scan">scan</a></code></li>
+<li><code><a title="picomotor.Controller.send_command" href="#picomotor.Controller.send_command">send_command</a></code></li>
+<li><code><a title="picomotor.Controller.set_acceleration" href="#picomotor.Controller.set_acceleration">set_acceleration</a></code></li>
+<li><code><a title="picomotor.Controller.set_address" href="#picomotor.Controller.set_address">set_address</a></code></li>
+<li><code><a title="picomotor.Controller.set_home" href="#picomotor.Controller.set_home">set_home</a></code></li>
+<li><code><a title="picomotor.Controller.set_motor_type" href="#picomotor.Controller.set_motor_type">set_motor_type</a></code></li>
+<li><code><a title="picomotor.Controller.set_velocity" href="#picomotor.Controller.set_velocity">set_velocity</a></code></li>
+<li><code><a title="picomotor.Controller.stop_motion" href="#picomotor.Controller.stop_motion">stop_motion</a></code></li>
+<li><code><a title="picomotor.Controller.verify_address_value" href="#picomotor.Controller.verify_address_value">verify_address_value</a></code></li>
+<li><code><a title="picomotor.Controller.verify_axis_value" href="#picomotor.Controller.verify_axis_value">verify_axis_value</a></code></li>
+<li><code><a title="picomotor.Controller.verify_command" href="#picomotor.Controller.verify_command">verify_command</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>
